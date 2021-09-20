@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h2 {
+  color: orangered;
+  position: relative;
+}
+
+.container h2::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  background: orangered;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 550ms;
+}
+
+.container h2:hover::before {
+  width: 9.2%;
+  opacity: 1;
+  animation: pong 4s linear infinite;
+}
+
+.container .search {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .search-input {
+  width: 100%;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  height: 0;
+  text-align: center;
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: all 750ms ease-in-out;
+  color: #fff;
+}
+
+.btn {
+  background: transparent;
+  color: orangered;
+  border: none;
+  border-radius: 50px;
+  padding: 0.4em;
+  transition: 740ms ease-in-out;
+}
+
+.btn:focus-within {
+  margin-top: 0.3em;
+  background: orangered;
+  color: black;
+  text-transform: uppercase;
+}
+
+.container:focus-within .search-input {
+  padding: 1.2em;
+  border: 1px solid orangered;
+  border-radius: 50px;
+}
+
+.container:focus-within h2::before {
+  width: 9.2%;
+  opacity: 1;
+  animation: pong 4s linear infinite;
+}
+
+.container:focus-within .btn {
+  margin-top: 0.3em;
+  clip-path: circle(50% at 50% 50%);
+  text-transform: uppercase;
+  background: orangered;
+  color: black;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 400px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .container .title {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .container h2 {
+    color: orangered;
+    transition: 1s ease-in-out;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+  }
+  .container h2::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 0%;
+    background: orangered;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 550ms;
+  }
+  .container h2:hover::before {
+    width: 9.2%;
+    opacity: 1;
+    animation: pong 4s linear infinite;
+  }
+  .container .search {
+    width: 50%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.3em;
+  }
+  .container .search .search-input {
+    width: 0;
+    height: 0;
+    text-align: left;
+    background: transparent;
+    border: none;
+    outline: none;
+    transition: all 750ms ease-in-out;
+    margin-left: 0.3em;
+    color: #fff;
+  }
+  .container .btn {
+    text-decoration: none;
+    color: orangered;
+    background: #111;
+    border: transparent;
+    padding: 0.4em;
+    cursor: pointer;
+    border-radius: 150px;
+    transition: 1s ease-in-out;
+    font-family: "Poppins", sans-serif;
+  }
+  .container .btn:focus-within {
+    background: orangered;
+    color: black;
+    transition: all 1s ease-in-out;
+  }
+  .container .btn:hover {
+    animation: 2s move linear infinite;
+  }
+  .container:focus-within .search-input {
+    width: 60%;
+    height: 0;
+    padding: 1.2em;
+    border: 1px solid orangered;
+    border-radius: 50px;
+  }
+  .container:focus-within .btn {
+    margin-top: 0;
+    text-transform: uppercase;
+    background: orangered;
+    color: black;
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-100%);
+    transition: 1s ease-in-out;
+    animation: none;
+  }
+  .container:focus-within h2 {
+    opacity: 0;
+    transition: 1s ease-in-out;
+    transform: translateX(-100%);
+    pointer-events: none;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(20%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pong {
+  0% {
+    transform: translateX(0);
+    background: orangered;
+  }
+  25% {
+    transform: translateX(1000%);
+    background: #005aff;
+  }
+  50% {
+    transform: translateX(0);
+    background: orangered;
+  }
+  75% {
+    transform: translateX(1000%);
+    background: #005aff;
+  }
+  100% {
+    transform: translateX(0);
+    background: orangered;
+  }
+}
+/*# sourceMappingURL=mobile.css.map */
